@@ -7,14 +7,14 @@ class Eventos():
     Eventos generales
     '''
 
-    def Salir(self):
+    def Salir():
         try:
             sys.exit()
         except Exception as error:
             print('El error es %s' % str(error))
 
 
-    def ValidoDni(self):
+    def ValidoDni():
         try:
             dni = var.ui.editDNI.text()
             if clients.Clients.validarDNI(dni):

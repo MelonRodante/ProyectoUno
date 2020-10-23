@@ -14,9 +14,7 @@ class Main(QtWidgets.QMainWindow):
         '''
 
 
-
         '''Botones'''
-        var.ui.btnAceptar.clicked(events.Eventos.Saludo())
         var.ui.btnSalir.clicked(events.Eventos.Salir())
 
         '''MenuBar'''
