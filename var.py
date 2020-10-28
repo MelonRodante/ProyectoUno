@@ -1,1 +1,1 @@
-global var
+global ui

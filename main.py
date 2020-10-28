@@ -13,12 +13,15 @@ class Main(QtWidgets.QMainWindow):
         Conexion con los eventos
         '''
 
+        '''Otros eventos'''
+        var.ui.editDNI.editingFinished.connect(events.Eventos.ValidoDni)
 
         '''Botones'''
-        var.ui.btnSalir.clicked(events.Eventos.Salir())
+        var.ui.btnSalir.clicked.connect(events.Eventos.Salir)
 
         '''MenuBar'''
-        var.ui.actionSalir.triggered(events.Eventos.Salir())
+        var.ui.actionSalir.triggered.connect(events.Eventos.Salir)
+
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication([])

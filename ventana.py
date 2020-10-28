@@ -117,7 +117,7 @@ class Ui_venPrincipal(object):
         self.btnSalir.setFont(font)
         self.btnSalir.setObjectName("btnSalir")
         self.lblValido = QtWidgets.QLabel(self.centralwidget)
-        self.lblValido.setGeometry(QtCore.QRect(260, 70, 16, 21))
+        self.lblValido.setGeometry(QtCore.QRect(260, 50, 16, 21))
         font = QtGui.QFont()
         font.setFamily("MV Boli")
         font.setPointSize(14)
