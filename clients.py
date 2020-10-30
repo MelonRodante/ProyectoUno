@@ -1,3 +1,5 @@
+import var
+
 class Clients():
     def validarDNI(dni):
         try:
@@ -19,3 +21,46 @@ class Clients():
         except:
             print('error en la aplicacion')
             return None
+
+
+    @staticmethod
+    def selSexo():
+        try:
+            if var.ui.rbtFem.isChecked():
+                print('Has elegido femenino')
+            if var.ui.rbtMasc.isChecked():
+                print('Has elegido masculino')
+        except Exception as error:
+            print('Error: %s' % str(error))
+
+
+    @staticmethod
+    def selPago():
+        try:
+            if var.ui.chkEfectivo.isChecked():
+                print('Pagas en efectivo')
+            if var.ui.chkTarjeta.isChecked():
+                print('Pagas con tarjeta')
+            if var.ui.chkTransferencia.isChecked():
+                print('Pagas con transferencia')
+        except Exception as error:
+            print('Error: %s' % str(error))
+
+
+
+    @staticmethod
+    def cargarProvincias():
+        try:
+            prov = ['', 'A Coruña', 'Lugo', 'Ourense', 'Pontevedra']
+            for i in prov:
+                var.ui.cmbProvincia.addItem(i)
+        except Exception as error:
+            print('Error: %s' % str(error))
+
+
+    def selectProvincia(prov):
+        try:
+            print('Has seleccionado la provincia de', prov)
+            return prov
+        except Exception as error:
+            print('Error: %s' % str(error))

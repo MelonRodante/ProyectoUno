@@ -26,9 +26,9 @@
    <widget class="Line" name="lineaSuperior">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>30</x>
       <y>30</y>
-      <width>761</width>
+      <width>741</width>
       <height>20</height>
      </rect>
     </property>
@@ -95,7 +95,7 @@ color: rgb(255, 255, 255);</string>
      <rect>
       <x>120</x>
       <y>50</y>
-      <width>131</width>
+      <width>121</width>
       <height>21</height>
      </rect>
     </property>
@@ -129,7 +129,7 @@ color: rgb(255, 255, 255);</string>
      </font>
     </property>
     <property name="text">
-     <string>Apellidos:</string>
+     <string>Apelidos:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="editApellido">
@@ -137,7 +137,7 @@ color: rgb(255, 255, 255);</string>
      <rect>
       <x>120</x>
       <y>90</y>
-      <width>281</width>
+      <width>321</width>
       <height>21</height>
      </rect>
     </property>
@@ -156,9 +156,9 @@ color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="lblNombre">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>460</x>
       <y>90</y>
-      <width>61</width>
+      <width>41</width>
       <height>21</height>
      </rect>
     </property>
@@ -171,15 +171,15 @@ color: rgb(255, 255, 255);</string>
      </font>
     </property>
     <property name="text">
-     <string>Nombre:</string>
+     <string>Nome:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="editNombre">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>510</x>
       <y>90</y>
-      <width>281</width>
+      <width>251</width>
       <height>21</height>
      </rect>
     </property>
@@ -265,6 +265,223 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSexo">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>170</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tahoma</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Sexo:</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtMasc">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>170</y>
+      <width>82</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tahoma</family>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Masculino</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtFem">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>170</y>
+      <width>82</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tahoma</family>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Femenino</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSexo_2">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>170</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tahoma</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Métodos de Pago:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblDireccion">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>130</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tahoma</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Dirección:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="editDireccion">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>130</y>
+      <width>321</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblProvincia">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>130</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tahoma</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Provincia:</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkEfectivo">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>170</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tahoma</family>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Efectivo</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkTarjeta">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>170</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tahoma</family>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Tarjeta</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkTransferencia">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>170</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tahoma</family>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Transferencia</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cmbProvincia">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>130</y>
+      <width>211</width>
+      <height>22</height>
+     </rect>
     </property>
    </widget>
   </widget>
