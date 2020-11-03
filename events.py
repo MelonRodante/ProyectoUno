@@ -1,6 +1,5 @@
 import var, sys, clients
 
-
 class Eventos():
 
     '''
@@ -10,7 +9,11 @@ class Eventos():
     @staticmethod
     def Salir():
         try:
-            sys.exit()
+            var.avisosalir.show()
+            if var.avisosalir.exec_():
+                sys.exit()
+            else:
+                var.avisosalir.close()
         except Exception as error:
             print('El error es %s' % str(error))
 

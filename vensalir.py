@@ -44,4 +44,4 @@ class Ui_venSalir(object):
         _translate = QtCore.QCoreApplication.translate
         venSalir.setWindowTitle(_translate("venSalir", "Dialog"))
         self.lblMensajeSalir.setText(_translate("venSalir", "¿Está seguro de que desea salir de la aplicación?"))
-import avisosalir_rc
+

@@ -22,7 +22,6 @@ class Clients():
             print('error en la aplicacion')
             return None
 
-
     @staticmethod
     def selSexo():
         try:
@@ -32,7 +31,6 @@ class Clients():
                 print('Has elegido masculino')
         except Exception as error:
             print('Error: %s' % str(error))
-
 
     @staticmethod
     def selPago():
@@ -46,8 +44,6 @@ class Clients():
         except Exception as error:
             print('Error: %s' % str(error))
 
-
-
     @staticmethod
     def cargarProvincias():
         try:
@@ -57,10 +53,17 @@ class Clients():
         except Exception as error:
             print('Error: %s' % str(error))
 
-
     def selectProvincia(prov):
         try:
             print('Has seleccionado la provincia de', prov)
             return prov
+        except Exception as error:
+            print('Error: %s' % str(error))
+
+    def cargaFecha(qDate):
+        try:
+            data = ('{0}/{1}/{2}'.format(qDate.day(), qDate.month(), qDate.year()))
+            var.ui.editFecha.setText(str(data))
+            var.dlgcalendar.hide()
         except Exception as error:
             print('Error: %s' % str(error))
