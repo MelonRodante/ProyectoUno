@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_venCalendar(object):
     def setupUi(self, venCalendar):
         venCalendar.setObjectName("venCalendar")
