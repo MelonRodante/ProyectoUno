@@ -9,8 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from calendar import *
-
+from rc_calendar import *
 
 class Ui_venPrincipal(object):
     def setupUi(self, venPrincipal):
@@ -285,3 +284,4 @@ class Ui_venPrincipal(object):
         self.menuArchivo.setTitle(_translate("venPrincipal", "Archivo"))
         self.actionSalir.setText(_translate("venPrincipal", "Salir"))
         self.actionSalir.setShortcut(_translate("venPrincipal", "Ctrl+S"))
+

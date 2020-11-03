@@ -9,8 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from avisosalir import *
-
+from rc_aviso import *
 
 class Ui_venSalir(object):
     def setupUi(self, venSalir):
@@ -33,7 +32,7 @@ class Ui_venSalir(object):
         self.lblImgSalir = QtWidgets.QLabel(venSalir)
         self.lblImgSalir.setGeometry(QtCore.QRect(30, 10, 51, 51))
         self.lblImgSalir.setText("")
-        self.lblImgSalir.setPixmap(QtGui.QPixmap(":/avisosalir/avisosalir.png"))
+        self.lblImgSalir.setPixmap(QtGui.QPixmap(":/rc_aviso/img/aviso.png"))
         self.lblImgSalir.setObjectName("lblImgSalir")
 
         self.retranslateUi(venSalir)

@@ -578,7 +578,7 @@ color: rgb(255, 255, 255);</string>
   </action>
  </widget>
  <resources>
-  <include location="img/calendar.qrc"/>
+  <include location="rc_calendar.qrc"/>
  </resources>
  <connections/>
 </ui>
