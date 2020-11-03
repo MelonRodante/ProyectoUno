@@ -505,7 +505,7 @@ color: rgb(255, 255, 255);</string>
      <string>Fecha de Alta:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="editDNI_2">
+   <widget class="QLineEdit" name="editFecha">
     <property name="geometry">
      <rect>
       <x>420</x>

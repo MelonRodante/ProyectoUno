@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from calendar import *
 
 
 class Ui_venPrincipal(object):
@@ -226,16 +227,16 @@ class Ui_venPrincipal(object):
         font.setWeight(75)
         self.lblFecha.setFont(font)
         self.lblFecha.setObjectName("lblFecha")
-        self.editDNI_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.editDNI_2.setGeometry(QtCore.QRect(420, 50, 121, 21))
+        self.editFecha = QtWidgets.QLineEdit(self.centralwidget)
+        self.editFecha.setGeometry(QtCore.QRect(420, 50, 121, 21))
         font = QtGui.QFont()
         font.setFamily("Calibri")
         font.setPointSize(12)
         font.setBold(False)
         font.setWeight(50)
-        self.editDNI_2.setFont(font)
-        self.editDNI_2.setText("")
-        self.editDNI_2.setObjectName("editDNI_2")
+        self.editFecha.setFont(font)
+        self.editFecha.setText("")
+        self.editFecha.setObjectName("editFecha")
         self.btnCalendar = QtWidgets.QPushButton(self.centralwidget)
         self.btnCalendar.setGeometry(QtCore.QRect(550, 50, 31, 31))
         self.btnCalendar.setText("")
