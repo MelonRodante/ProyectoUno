@@ -240,7 +240,7 @@ class Ui_venPrincipal(object):
         self.btnCalendar.setGeometry(QtCore.QRect(550, 50, 31, 31))
         self.btnCalendar.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("img/calendar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/rc_calendar/calendar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnCalendar.setIcon(icon)
         self.btnCalendar.setIconSize(QtCore.QSize(32, 32))
         self.btnCalendar.setObjectName("btnCalendar")

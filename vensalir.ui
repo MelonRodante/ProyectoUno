@@ -67,12 +67,12 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>img/aviso.png</pixmap>
+    <pixmap resource="img/rc_aviso.qrc">:/rc_aviso/aviso.png</pixmap>
    </property>
   </widget>
  </widget>
  <resources>
-  <include location="rc_aviso.qrc"/>
+  <include location="img/rc_aviso.qrc"/>
  </resources>
  <connections>
   <connection>

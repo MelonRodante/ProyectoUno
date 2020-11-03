@@ -32,7 +32,7 @@ class Ui_venSalir(object):
         self.lblImgSalir = QtWidgets.QLabel(venSalir)
         self.lblImgSalir.setGeometry(QtCore.QRect(30, 10, 51, 51))
         self.lblImgSalir.setText("")
-        self.lblImgSalir.setPixmap(QtGui.QPixmap("img/aviso.png"))
+        self.lblImgSalir.setPixmap(QtGui.QPixmap(":/rc_aviso/aviso.png"))
         self.lblImgSalir.setObjectName("lblImgSalir")
 
         self.retranslateUi(venSalir)
