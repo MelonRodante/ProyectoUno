@@ -539,8 +539,8 @@ color: rgb(255, 255, 255);</string>
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="img/rc_calendar.qrc">
-      <normaloff>:/rc_calendar/calendar.png</normaloff>:/rc_calendar/calendar.png</iconset>
+     <iconset resource="img/calendar.qrc">
+      <normaloff>:/calendar/calendar.png</normaloff>:/calendar/calendar.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -578,7 +578,7 @@ color: rgb(255, 255, 255);</string>
   </action>
  </widget>
  <resources>
-  <include location="img/rc_calendar.qrc"/>
+  <include location="img/calendar.qrc"/>
  </resources>
  <connections/>
 </ui>

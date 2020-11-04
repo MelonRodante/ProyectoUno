@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from rc_calendar import *
+
 
 class Ui_venPrincipal(object):
     def setupUi(self, venPrincipal):
@@ -240,7 +240,7 @@ class Ui_venPrincipal(object):
         self.btnCalendar.setGeometry(QtCore.QRect(550, 50, 31, 31))
         self.btnCalendar.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/rc_calendar/calendar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/calendar/calendar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnCalendar.setIcon(icon)
         self.btnCalendar.setIconSize(QtCore.QSize(32, 32))
         self.btnCalendar.setObjectName("btnCalendar")
@@ -284,4 +284,4 @@ class Ui_venPrincipal(object):
         self.menuArchivo.setTitle(_translate("venPrincipal", "Archivo"))
         self.actionSalir.setText(_translate("venPrincipal", "Salir"))
         self.actionSalir.setShortcut(_translate("venPrincipal", "Ctrl+S"))
-
+import calendar_rc

@@ -9,13 +9,14 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from rc_aviso import *
+
 
 class Ui_venSalir(object):
     def setupUi(self, venSalir):
         venSalir.setObjectName("venSalir")
         venSalir.setWindowModality(QtCore.Qt.WindowModal)
         venSalir.resize(400, 120)
+        venSalir.setModal(True)
         self.buttonBox = QtWidgets.QDialogButtonBox(venSalir)
         self.buttonBox.setGeometry(QtCore.QRect(30, 70, 341, 32))
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
@@ -32,7 +33,7 @@ class Ui_venSalir(object):
         self.lblImgSalir = QtWidgets.QLabel(venSalir)
         self.lblImgSalir.setGeometry(QtCore.QRect(30, 10, 51, 51))
         self.lblImgSalir.setText("")
-        self.lblImgSalir.setPixmap(QtGui.QPixmap(":/rc_aviso/aviso.png"))
+        self.lblImgSalir.setPixmap(QtGui.QPixmap(":/aviso/aviso.png"))
         self.lblImgSalir.setObjectName("lblImgSalir")
 
         self.retranslateUi(venSalir)
@@ -44,4 +45,4 @@ class Ui_venSalir(object):
         _translate = QtCore.QCoreApplication.translate
         venSalir.setWindowTitle(_translate("venSalir", "Dialog"))
         self.lblMensajeSalir.setText(_translate("venSalir", "¿Está seguro de que desea salir de la aplicación?"))
-
+import aviso_rc

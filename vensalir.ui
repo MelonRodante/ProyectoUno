@@ -16,6 +16,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
@@ -67,12 +70,12 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="img/rc_aviso.qrc">:/rc_aviso/aviso.png</pixmap>
+    <pixmap resource="img/aviso.qrc">:/aviso/aviso.png</pixmap>
    </property>
   </widget>
  </widget>
  <resources>
-  <include location="img/rc_aviso.qrc"/>
+  <include location="img/aviso.qrc"/>
  </resources>
  <connections>
   <connection>

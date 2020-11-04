@@ -1,5 +1,5 @@
 global ui
 global rbtSex
-global chkPago
+global chkpago
 global avisosalir
 global dlgcalendar

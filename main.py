@@ -40,7 +40,7 @@ class Main(QtWidgets.QMainWindow):
         var.avisosalir = DialogSalir()
 
         var.rbtSex = (var.ui.rbtMasc, var.ui.rbtFem)
-        var.chkPago = (var.ui.chkEfectivo, var.ui.chkTarjeta, var.ui.chkTransferencia)
+        var.chkpago = (var.ui.chkEfectivo, var.ui.chkTarjeta, var.ui.chkTransferencia)
 
 
         '''
@@ -63,7 +63,7 @@ class Main(QtWidgets.QMainWindow):
             i.toggled.connect(clients.Clients.selSexo)
 
         '''Check Box'''
-        for i in var.chkPago:
+        for i in var.chkpago:
             i.stateChanged.connect(clients.Clients.selPago)
 
         '''MenuBar'''

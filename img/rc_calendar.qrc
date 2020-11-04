@@ -1,5 +1,0 @@
-<RCC>
-  <qresource prefix="rc_calendar">
-    <file>calendar.png</file>
-  </qresource>
-</RCC>
