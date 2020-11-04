@@ -70,7 +70,10 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="img/aviso.qrc">:/aviso/aviso.png</pixmap>
+    <pixmap>:/aviso/aviso.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>285</height>
    </rect>
   </property>
   <property name="font">
@@ -198,9 +198,9 @@ color: rgb(255, 255, 255);</string>
    <widget class="Line" name="lineaInferior">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>310</y>
-      <width>761</width>
+      <x>30</x>
+      <y>200</y>
+      <width>741</width>
       <height>20</height>
      </rect>
     </property>
@@ -212,7 +212,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>340</y>
+      <y>220</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -231,7 +231,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>340</y>
+      <y>220</y>
       <width>75</width>
       <height>23</height>
      </rect>
