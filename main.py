@@ -20,10 +20,10 @@ class DialogCalendar(QtWidgets.QDialog):
 class DialogSalir(QtWidgets.QDialog):
     def __init__(self):
         super(DialogSalir, self).__init__()
-        var.avisosalir = Ui_venSalir()
-        var.avisosalir.setupUi(self)
-        var.avisosalir.buttonBox.button(QtWidgets.QDialogButtonBox.Yes).clicked.connect(events.Eventos.Salir)
-        var.avisosalir.buttonBox.button(QtWidgets.QDialogButtonBox.No).clicked.connect(events.Eventos.Salir)
+        var.dlgsalir = Ui_venSalir()
+        var.dlgsalir.setupUi(self)
+        var.dlgsalir.buttonBox.button(QtWidgets.QDialogButtonBox.Yes).clicked.connect(events.Eventos.Salir)
+        #var.dlgsalir.buttonBox.button(QtWidgets.QDialogButtonBox.No).clicked.connect(events.Eventos.Salir)
 
 
 class Main(QtWidgets.QMainWindow):
@@ -37,7 +37,7 @@ class Main(QtWidgets.QMainWindow):
         Definimos variables
         '''
         var.dlgcalendar = DialogCalendar()
-        var.avisosalir = DialogSalir()
+        var.dlgsalir = DialogSalir()
 
         var.rbtSex = (var.ui.rbtMasc, var.ui.rbtFem)
         var.chkpago = (var.ui.chkEfectivo, var.ui.chkTarjeta, var.ui.chkTransferencia)
@@ -50,7 +50,9 @@ class Main(QtWidgets.QMainWindow):
 
         '''Otros eventos'''
         QtWidgets.QAction(self).triggered.connect(self.close)  # Cerrar al pulsar la X de la ventana
+
         var.ui.editDNI.editingFinished.connect(events.Eventos.ValidoDni)
+
         clients.Clients.cargarProvincias()
         var.ui.cmbProvincia.activated[str].connect(clients.Clients.selectProvincia)
 
@@ -70,7 +72,7 @@ class Main(QtWidgets.QMainWindow):
         var.ui.actionSalir.triggered.connect(events.Eventos.Salir)
 
     def closeEvent(self, event):
-        events.Eventos.Salir()
+        events.Eventos.Salir(event)
 
 
 if __name__ == '__main__':

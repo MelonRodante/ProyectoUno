@@ -6,14 +6,14 @@ class Eventos():
     Eventos generales
     '''
 
-    @staticmethod
-    def Salir():
+    def Salir(event):
         try:
-            var.avisosalir.show()
-            if var.avisosalir.exec_():
+            var.dlgsalir.show()
+            if var.dlgsalir.exec_():
                 sys.exit()
             else:
-                var.avisosalir.close()
+                var.dlgsalir.close()
+                event.ignore()
         except Exception as error:
             print('El error es %s' % str(error))
 
