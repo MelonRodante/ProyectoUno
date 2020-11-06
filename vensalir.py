@@ -34,6 +34,7 @@ class Ui_venSalir(object):
         self.lblImgSalir.setGeometry(QtCore.QRect(30, 10, 51, 51))
         self.lblImgSalir.setText("")
         self.lblImgSalir.setPixmap(QtGui.QPixmap(":/aviso/aviso.png"))
+        self.lblImgSalir.setScaledContents(False)
         self.lblImgSalir.setObjectName("lblImgSalir")
 
         self.retranslateUi(venSalir)

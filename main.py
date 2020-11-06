@@ -57,8 +57,11 @@ class Main(QtWidgets.QMainWindow):
         var.ui.cmbProvincia.activated[str].connect(clients.Clients.selectProvincia)
 
         '''Botones'''
-        var.ui.btnSalir.clicked.connect(events.Eventos.Salir)
         var.ui.btnCalendar.clicked.connect(clients.Clients.abrirCalendar)
+
+        var.ui.btnAceptar.clicked.connect(clients.Clients.showClientes)
+        var.ui.btnSalir.clicked.connect(events.Eventos.Salir)
+
 
         '''Radio Buttons'''
         for i in var.rbtSex:
@@ -72,12 +75,12 @@ class Main(QtWidgets.QMainWindow):
         var.ui.actionSalir.triggered.connect(events.Eventos.Salir)
 
     def closeEvent(self, event):
-        events.Eventos.Salir(event)
+        events.Eventos.SalirBoton(event)
 
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication([])
     window = Main()
-    window.show()
+    window.showMaximized()
     sys.exit(app.exec_())
 

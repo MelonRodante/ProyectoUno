@@ -6,23 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>311</width>
-    <height>182</height>
+    <width>330</width>
+    <height>201</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Fecha Alta</string>
   </property>
-  <widget class="QCalendarWidget" name="calendar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>312</width>
-     <height>183</height>
-    </rect>
-   </property>
-  </widget>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QCalendarWidget" name="calendar"/>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

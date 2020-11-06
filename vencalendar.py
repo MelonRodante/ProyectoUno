@@ -14,10 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_venCalendar(object):
     def setupUi(self, venCalendar):
         venCalendar.setObjectName("venCalendar")
-        venCalendar.resize(311, 182)
+        venCalendar.resize(330, 201)
+        self.gridLayout_2 = QtWidgets.QGridLayout(venCalendar)
+        self.gridLayout_2.setObjectName("gridLayout_2")
         self.calendar = QtWidgets.QCalendarWidget(venCalendar)
-        self.calendar.setGeometry(QtCore.QRect(0, 0, 312, 183))
         self.calendar.setObjectName("calendar")
+        self.gridLayout_2.addWidget(self.calendar, 0, 0, 1, 1)
 
         self.retranslateUi(venCalendar)
         QtCore.QMetaObject.connectSlotsByName(venCalendar)
