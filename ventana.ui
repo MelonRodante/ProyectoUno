@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>900</width>
-    <height>646</height>
+    <width>905</width>
+    <height>643</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>900</width>
-    <height>300</height>
+    <height>640</height>
    </size>
   </property>
   <property name="font">
@@ -57,1061 +57,1056 @@
      </spacer>
     </item>
     <item row="0" column="1">
-     <layout class="QGridLayout" name="gridLayout">
-      <property name="sizeConstraint">
-       <enum>QLayout::SetDefaultConstraint</enum>
-      </property>
-      <property name="rightMargin">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
        <number>0</number>
       </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item row="0" column="0" colspan="4">
-       <layout class="QHBoxLayout" name="hlTitulo">
-        <item>
-         <spacer name="horizontalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+      <widget class="QWidget" name="tabClientes">
+       <attribute name="title">
+        <string>Clientes</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
           </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
+          <property name="rightMargin">
+           <number>0</number>
           </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLabel" name="lblTitulo">
-          <property name="minimumSize">
-           <size>
-            <width>200</width>
-            <height>20</height>
-           </size>
+          <property name="bottomMargin">
+           <number>0</number>
           </property>
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0.743864, x2:0, y2:1, stop:0 rgba(0, 63, 128, 255), stop:1 rgba(255, 255, 255, 255));
+          <item row="6" column="2">
+           <widget class="QLabel" name="lblPago">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>125</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>125</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Tahoma</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Métodos de Pago:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <layout class="QHBoxLayout" name="hlSexo">
+            <item>
+             <widget class="QRadioButton" name="rbtMasc">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>90</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Tahoma</family>
+                <pointsize>8</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Masculino</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rbtFem">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>90</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Tahoma</family>
+                <pointsize>8</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Femenino</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="7" column="0" colspan="4">
+           <widget class="Line" name="lineaInferior">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0" colspan="4">
+           <layout class="QHBoxLayout" name="hlTitulo_2">
+            <item>
+             <spacer name="horizontalSpacer_10">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblTitulo_2">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0.743864, x2:0, y2:1, stop:0 rgba(0, 63, 128, 255), stop:1 rgba(255, 255, 255, 255));
 color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="text">
-           <string>XESTION CLIENTES</string>
-          </property>
-          <property name="textFormat">
-           <enum>Qt::AutoText</enum>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="lblApellidos">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>64</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>64</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Tahoma</family>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Apelidos:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QLineEdit" name="editApellido">
-        <property name="minimumSize">
-         <size>
-          <width>300</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>300</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Calibri</family>
-          <pointsize>12</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QLabel" name="lblFecha">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>125</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>125</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Tahoma</family>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="text">
-         <string>Fecha de Alta:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QLabel" name="lblNombre">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>125</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>125</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Tahoma</family>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="text">
-         <string>Nome:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QLineEdit" name="editDireccion">
-        <property name="minimumSize">
-         <size>
-          <width>300</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>300</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Calibri</family>
-          <pointsize>12</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="2">
-       <widget class="QLabel" name="lblProvincia">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>125</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>125</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Tahoma</family>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Provincia:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="3">
-       <layout class="QHBoxLayout" name="hlFecha">
-        <item>
-         <widget class="QLineEdit" name="editFecha">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>100</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Calibri</family>
-            <pointsize>12</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="maxLength">
-           <number>10</number>
-          </property>
-          <property name="frame">
-           <bool>true</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="btnCalendar">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>32</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"/>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>img/calendar.png</normaloff>img/calendar.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>32</width>
-            <height>32</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item row="5" column="3">
-       <widget class="QComboBox" name="cmbProvincia">
-        <property name="minimumSize">
-         <size>
-          <width>342</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>342</width>
-          <height>25</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="lblDNI">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>64</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>64</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Tahoma</family>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>DNI:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0">
-       <widget class="QLabel" name="lblSexo">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>64</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>64</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Tahoma</family>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Sexo:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="4">
-       <widget class="Line" name="lineaSuperior">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <layout class="QHBoxLayout" name="hlDni">
-        <item>
-         <widget class="QLineEdit" name="editDNI">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Calibri</family>
-            <pointsize>12</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="maxLength">
-           <number>9</number>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="lblValido">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>6</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>25</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>25</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>MV Boli</family>
-            <pointsize>14</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_6">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item row="4" column="3">
-       <widget class="QLineEdit" name="editNombre">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>342</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>342</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Calibri</family>
-          <pointsize>12</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="lblDireccion">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>64</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>64</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Tahoma</family>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Dirección:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="10" column="0" colspan="4">
-       <layout class="QHBoxLayout" name="hlBotones">
-        <item>
-         <spacer name="horizontalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QPushButton" name="btnAceptar">
-          <property name="minimumSize">
-           <size>
-            <width>80</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>80</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Aceptar</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="btnSalir">
-          <property name="minimumSize">
-           <size>
-            <width>80</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>80</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Salir</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_5">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item row="6" column="2">
-       <widget class="QLabel" name="lblPago">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>125</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>125</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Tahoma</family>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Métodos de Pago:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="1">
-       <layout class="QHBoxLayout" name="hlSexo">
-        <item>
-         <widget class="QRadioButton" name="rbtMasc">
-          <property name="minimumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Tahoma</family>
-            <pointsize>8</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Masculino</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="rbtFem">
-          <property name="minimumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Tahoma</family>
-            <pointsize>8</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Femenino</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_8">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item row="7" column="0" colspan="4">
-       <widget class="Line" name="lineaInferior">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0" colspan="4">
-       <layout class="QHBoxLayout" name="hlTitulo_2">
-        <item>
-         <spacer name="horizontalSpacer_10">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLabel" name="lblTitulo_2">
-          <property name="minimumSize">
-           <size>
-            <width>200</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0.743864, x2:0, y2:1, stop:0 rgba(0, 63, 128, 255), stop:1 rgba(255, 255, 255, 255));
+              </property>
+              <property name="text">
+               <string>LISTA CLIENTES</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+              <property name="scaledContents">
+               <bool>false</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_11">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="6" column="3">
+           <layout class="QHBoxLayout" name="hlMetodosPago">
+            <item>
+             <widget class="QCheckBox" name="chkTarjeta">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>90</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Tahoma</family>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Tarjeta</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="chkEfectivo">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>90</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Tahoma</family>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Efectivo</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="chkTransferencia">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>90</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Tahoma</family>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Transferencia</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLabel" name="lblNombre">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>125</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>125</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Tahoma</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="text">
+             <string>Nome:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="editDireccion">
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>12</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLabel" name="lblProvincia">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>125</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>125</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Tahoma</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Provincia:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="3">
+           <widget class="QLineEdit" name="editNombre">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>342</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>342</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>12</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <layout class="QHBoxLayout" name="hlDni">
+            <item>
+             <widget class="QLineEdit" name="editDNI">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>12</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="maxLength">
+               <number>9</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblValido">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>6</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MV Boli</family>
+                <pointsize>14</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="lblDireccion">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>64</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>64</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Tahoma</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Dirección:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0" colspan="4">
+           <layout class="QHBoxLayout" name="hlBotones">
+            <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnAceptar">
+              <property name="minimumSize">
+               <size>
+                <width>80</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Aceptar</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnSalir">
+              <property name="minimumSize">
+               <size>
+                <width>80</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Salir</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLabel" name="lblFecha">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>125</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>125</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Tahoma</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="text">
+             <string>Fecha de Alta:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="editApellido">
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>12</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="lblApellidos">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>64</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>64</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Tahoma</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Apelidos:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lblDNI">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>64</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>64</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Tahoma</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>DNI:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <layout class="QHBoxLayout" name="hlFecha">
+            <item>
+             <widget class="QLineEdit" name="editFecha">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>12</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="maxLength">
+               <number>10</number>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnCalendar">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>32</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>img/calendar.png</normaloff>img/calendar.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>32</width>
+                <height>32</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="5" column="3">
+           <widget class="QComboBox" name="cmbProvincia">
+            <property name="minimumSize">
+             <size>
+              <width>342</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>342</width>
+              <height>25</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="4">
+           <widget class="Line" name="lineaSuperior">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="lblSexo">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>64</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>64</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Tahoma</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Sexo:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="4">
+           <layout class="QHBoxLayout" name="hlTitulo">
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblTitulo">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0.743864, x2:0, y2:1, stop:0 rgba(0, 63, 128, 255), stop:1 rgba(255, 255, 255, 255));
 color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="text">
-           <string>LISTA CLIENTES</string>
-          </property>
-          <property name="textFormat">
-           <enum>Qt::AutoText</enum>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_11">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item row="6" column="3">
-       <layout class="QHBoxLayout" name="hlMetodosPago">
-        <item>
-         <widget class="QCheckBox" name="chkTarjeta">
-          <property name="minimumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Tahoma</family>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Tarjeta</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="chkEfectivo">
-          <property name="minimumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Tahoma</family>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Efectivo</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="chkTransferencia">
-          <property name="minimumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Tahoma</family>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Transferencia</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_9">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
+              </property>
+              <property name="text">
+               <string>XESTION CLIENTES</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+              <property name="scaledContents">
+               <bool>false</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="9" column="0" colspan="4">
+           <widget class="QTableWidget" name="tablaCli">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustIgnored</enum>
+            </property>
+            <column>
+             <property name="text">
+              <string>DNI</string>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>NOMBRE</string>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>APELLIDOS</string>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
-      </item>
-      <item row="9" column="0" colspan="4">
-       <widget class="QScrollArea" name="scrollArea">
-        <property name="widgetResizable">
-         <bool>true</bool>
-        </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>847</width>
-           <height>322</height>
-          </rect>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <widget class="QTableWidget" name="tablaCli">
-          <property name="geometry">
-           <rect>
-            <x>160</x>
-            <y>10</y>
-            <width>661</width>
-            <height>301</height>
-           </rect>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="sizeAdjustPolicy">
-           <enum>QAbstractScrollArea::AdjustIgnored</enum>
-          </property>
-          <column>
-           <property name="text">
-            <string>DNI</string>
-           </property>
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="textAlignment">
-            <set>AlignCenter</set>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>NOMBRE</string>
-           </property>
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="textAlignment">
-            <set>AlignCenter</set>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>APELLIDOS</string>
-           </property>
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="textAlignment">
-            <set>AlignCenter</set>
-           </property>
-          </column>
-         </widget>
-        </widget>
-       </widget>
-      </item>
-     </layout>
+      </widget>
+      <widget class="QWidget" name="tabFacturacion">
+       <attribute name="title">
+        <string>Facturacion</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tabProductos">
+       <attribute name="title">
+        <string>Productos</string>
+       </attribute>
+      </widget>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -1120,7 +1115,7 @@ color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>900</width>
+     <width>905</width>
      <height>21</height>
     </rect>
    </property>
@@ -1146,4 +1141,7 @@ color: rgb(255, 255, 255);</string>
   <include location="img/calendar.qrc"/>
  </resources>
  <connections/>
+ <buttongroups>
+  <buttongroup name="rbtGroupSex"/>
+ </buttongroups>
 </ui>

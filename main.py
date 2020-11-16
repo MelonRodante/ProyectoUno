@@ -39,9 +39,10 @@ class Main(QtWidgets.QMainWindow):
         var.dlgcalendar = DialogCalendar()
         var.dlgsalir = DialogSalir()
 
+        var.listaEditClients = [var.ui.editDNI, var.ui.editApellido, var.ui.editNombre, var.ui.editFecha, var.ui.editDireccion]
+
         var.rbtSex = (var.ui.rbtMasc, var.ui.rbtFem)
         var.chkpago = (var.ui.chkEfectivo, var.ui.chkTarjeta, var.ui.chkTransferencia)
-
 
         '''
         Conexion con los eventos
@@ -55,6 +56,9 @@ class Main(QtWidgets.QMainWindow):
 
         clients.Clients.cargarProvincias()
         var.ui.cmbProvincia.activated[str].connect(clients.Clients.selectProvincia)
+
+        var.ui.tablaCli.clicked.connect(clients.Clients.cargarClientes)
+        var.ui.tablaCli.setSelectionBehavior(QtWidgets.QTableWidget.SelectRows)
 
         '''Botones'''
         var.ui.btnCalendar.clicked.connect(clients.Clients.abrirCalendar)

@@ -88,9 +88,8 @@ class Clients():
             newCli = []
             clitab = []  # sera lo que carguemos en la tabla
 
-            client = [var.ui.editDNI, var.ui.editApellido, var.ui.editNombre, var.ui.editFecha, var.ui.editDireccion]
             k = 0
-            for i in client:
+            for i in var.listaEditClients:
                 newCli.append(i.text())  # cargamos los valores que hay en los editLine
                 if k < 3:
                     clitab.append(i.text())
@@ -118,8 +117,37 @@ class Clients():
                 cell = QtWidgets.QTableWidgetItem(registro)
                 var.ui.tablaCli.setItem(row, column, cell)
                 column += 1
+
+            Clients.limpiarCliente()
+
         except Exception as error:
             print('Error: %s' % str(error))
 
+    @staticmethod
+    def cargarClientes():
+        try:
+            fila = var.ui.tablaCli.selectedItems()
+            client = [var.ui.editDNI, var.ui.editApellido, var.ui.editNombre]
+            if fila:
+                fila = [dato.text() for dato in fila]
+                print(fila)
+                i=0
+                for i, dato in enumerate(client):
+                    dato.setText(fila[i])
+        except Exception as error:
+            print('Error: %s' % str(error))
 
-
+    @staticmethod
+    def limpiarCliente():
+            try:
+                for i in range(len(var.listaEditClients)):
+                    var.listaEditClients[i].setText('')
+                var.ui.rbtGroupSex.setExclusive(False)
+                for dato in var.chkpago:
+                    dato.setChecked(False)
+                for data in var.rbtSex:
+                    data.setChecked(False)
+                var.ui.cmbProvincia.setCurrentIndex(0)
+                var.ui.lblValido.setText('')
+            except Exception as error:
+                print('Error: %s' % str(error))
