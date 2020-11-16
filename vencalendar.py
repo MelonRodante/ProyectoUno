@@ -14,7 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_venCalendar(object):
     def setupUi(self, venCalendar):
         venCalendar.setObjectName("venCalendar")
+        venCalendar.setWindowModality(QtCore.Qt.ApplicationModal)
         venCalendar.resize(330, 201)
+        venCalendar.setModal(True)
         self.gridLayout_2 = QtWidgets.QGridLayout(venCalendar)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.calendar = QtWidgets.QCalendarWidget(venCalendar)

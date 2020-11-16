@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_venSalir(object):
     def setupUi(self, venSalir):
         venSalir.setObjectName("venSalir")
-        venSalir.setWindowModality(QtCore.Qt.WindowModal)
+        venSalir.setWindowModality(QtCore.Qt.ApplicationModal)
         venSalir.resize(400, 120)
         venSalir.setModal(True)
         self.buttonBox = QtWidgets.QDialogButtonBox(venSalir)
