@@ -134,9 +134,15 @@
                 <bold>false</bold>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
               <property name="text">
                <string>Masculino</string>
               </property>
+              <attribute name="buttonGroup">
+               <string notr="true">rbtGroupSex</string>
+              </attribute>
              </widget>
             </item>
             <item>
@@ -161,9 +167,15 @@
                 <bold>false</bold>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
               <property name="text">
                <string>Femenino</string>
               </property>
+              <attribute name="buttonGroup">
+               <string notr="true">rbtGroupSex</string>
+              </attribute>
              </widget>
             </item>
             <item>
@@ -283,6 +295,9 @@ color: rgb(255, 255, 255);</string>
               <property name="text">
                <string>Tarjeta</string>
               </property>
+              <attribute name="buttonGroup">
+               <string notr="true">chkGroupPago</string>
+              </attribute>
              </widget>
             </item>
             <item>
@@ -309,6 +324,9 @@ color: rgb(255, 255, 255);</string>
               <property name="text">
                <string>Efectivo</string>
               </property>
+              <attribute name="buttonGroup">
+               <string notr="true">chkGroupPago</string>
+              </attribute>
              </widget>
             </item>
             <item>
@@ -335,6 +353,9 @@ color: rgb(255, 255, 255);</string>
               <property name="text">
                <string>Transferencia</string>
               </property>
+              <attribute name="buttonGroup">
+               <string notr="true">chkGroupPago</string>
+              </attribute>
              </widget>
             </item>
             <item>
@@ -410,6 +431,9 @@ color: rgb(255, 255, 255);</string>
               <bold>false</bold>
              </font>
             </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 222);</string>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -476,6 +500,9 @@ color: rgb(255, 255, 255);</string>
               <bold>false</bold>
              </font>
             </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 222);</string>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -510,6 +537,9 @@ color: rgb(255, 255, 255);</string>
                 <weight>50</weight>
                 <bold>false</bold>
                </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 222);</string>
               </property>
               <property name="text">
                <string/>
@@ -616,7 +646,7 @@ color: rgb(255, 255, 255);</string>
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="btnAceptar">
+             <widget class="QPushButton" name="btnAlta">
               <property name="minimumSize">
                <size>
                 <width>80</width>
@@ -636,7 +666,7 @@ color: rgb(255, 255, 255);</string>
                </font>
               </property>
               <property name="text">
-               <string>Aceptar</string>
+               <string>Alta</string>
               </property>
              </widget>
             </item>
@@ -737,6 +767,9 @@ color: rgb(255, 255, 255);</string>
               <weight>50</weight>
               <bold>false</bold>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 222);</string>
             </property>
             <property name="text">
              <string/>
@@ -844,6 +877,9 @@ color: rgb(255, 255, 255);</string>
               </property>
               <property name="autoFillBackground">
                <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 222);</string>
               </property>
               <property name="text">
                <string/>
@@ -1143,5 +1179,6 @@ color: rgb(255, 255, 255);</string>
  <connections/>
  <buttongroups>
   <buttongroup name="rbtGroupSex"/>
+  <buttongroup name="chkGroupPago"/>
  </buttongroups>
 </ui>

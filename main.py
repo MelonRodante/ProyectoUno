@@ -1,3 +1,4 @@
+import conexion
 from vencalendar import *
 from ventana import *
 from vensalir import *
@@ -45,6 +46,11 @@ class Main(QtWidgets.QMainWindow):
         var.chkpago = (var.ui.chkEfectivo, var.ui.chkTarjeta, var.ui.chkTransferencia)
 
         '''
+        Conexion con la base de datos       
+        '''
+        conexion.Conexion.conectardb(var.filedb)
+
+        '''
         Conexion con los eventos
         '''
 
@@ -63,7 +69,7 @@ class Main(QtWidgets.QMainWindow):
         '''Botones'''
         var.ui.btnCalendar.clicked.connect(clients.Clients.abrirCalendar)
 
-        var.ui.btnAceptar.clicked.connect(clients.Clients.showClientes)
+        var.ui.btnAlta.clicked.connect(clients.Clients.altaCliente)
         var.ui.btnSalir.clicked.connect(events.Eventos.Salir)
 
 

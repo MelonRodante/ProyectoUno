@@ -7,10 +7,11 @@ global rbtGroupSex
 global sex
 
 global chkpago
-pay = []
 
 global vpro
 
 global dlgsalir
 
 global dlgcalendar
+
+filedb = 'clientes.db'

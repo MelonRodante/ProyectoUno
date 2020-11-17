@@ -1,9 +1,12 @@
 from PyQt5 import QtWidgets
 
+import conexion
 import var
 
 
 class Clients():
+
+    @staticmethod
     def validarDNI(dni):
         try:
             tabla = "TRWAGMYFDPXBNJZSQVHLCKE"
@@ -38,12 +41,16 @@ class Clients():
     @staticmethod
     def selPago():
         try:
-            if var.ui.chkEfectivo.isChecked():
-                var.pay.append('Efectivo')
-            if var.ui.chkTarjeta.isChecked():
-                var.pay.append('Tarjeta')
-            if var.ui.chkTransferencia.isChecked():
-                var.pay.append('Transferencia')
+            pay = []
+            for i, data in enumerate(var.ui.chkGroupPago.buttons()):
+                if var.ui.chkEfectivo.isChecked():
+                    pay.append('Efectivo')
+                if var.ui.chkTarjeta.isChecked():
+                    pay.append('Tarjeta')
+                if var.ui.chkTransferencia.isChecked():
+                    pay.append('Transferencia')
+                print(pay)
+                return pay
         except Exception as error:
             print('Error: %s' % str(error))
 
@@ -56,6 +63,7 @@ class Clients():
         except Exception as error:
             print('Error: %s' % str(error))
 
+    @staticmethod
     def selectProvincia(prov):
         try:
             var.vpro = prov
@@ -63,6 +71,7 @@ class Clients():
         except Exception as error:
             print('Error: %s' % str(error))
 
+    @staticmethod
     def cargarFecha(qDate):
         try:
             data = ('{0}/{1}/{2}'.format(qDate.day(), qDate.month(), qDate.year()))
@@ -71,14 +80,15 @@ class Clients():
         except Exception as error:
             print('Error: %s' % str(error))
 
-    def abrirCalendar(self):
+    @staticmethod
+    def abrirCalendar():
         try:
             var.dlgcalendar.show()
         except Exception as error:
             print('Error: %s ' % str(error))
 
     @staticmethod
-    def showClientes():
+    def altaCliente():
         '''
         Cargara los clientes en la tabla
         '''
@@ -96,28 +106,25 @@ class Clients():
                     k += 1
 
             newCli.append(var.vpro)
-
             newCli.append(var.sex)
-
-            var.pay = set(var.pay)
-            for j in var.pay:
-                newCli.append(j)
-
+            newCli.append(Clients.selPago())
 
             print(newCli)
             print(clitab)
 
             # aqui empieza como trabajar con la TableWidget
+            if var.listaEditClients:
+                row = 0
+                column = 0
 
-            row = 0
-            column = 0
-
-            var.ui.tablaCli.insertRow(row)
-            for registro in clitab:
-                cell = QtWidgets.QTableWidgetItem(registro)
-                var.ui.tablaCli.setItem(row, column, cell)
-                column += 1
-
+                var.ui.tablaCli.insertRow(row)
+                for registro in clitab:
+                    cell = QtWidgets.QTableWidgetItem(registro)
+                    var.ui.tablaCli.setItem(row, column, cell)
+                    column += 1
+                conexion.Conexion.crearCliente(newCli)
+            else:
+                print('Faltan datos')
             Clients.limpiarCliente()
 
         except Exception as error:
