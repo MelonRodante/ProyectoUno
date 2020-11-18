@@ -49,6 +49,7 @@ class Main(QtWidgets.QMainWindow):
         Conexion con la base de datos       
         '''
         conexion.Conexion.conectardb(var.filedb)
+        conexion.Conexion.mostrarClientes()
 
         '''
         Conexion con los eventos

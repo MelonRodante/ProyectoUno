@@ -1,5 +1,7 @@
 from PyQt5 import QtSql, QtWidgets
 
+import var
+
 
 class Conexion:
 
@@ -34,5 +36,26 @@ class Conexion:
         if query.exec_():
             print("Inserción Correcta")
             Conexion.mostrarClientes()
+            return True
+
         else:
             print("Error al insertar: ", query.lastError().text())
+            return False
+
+    @staticmethod
+    def mostrarClientes():
+        index = 0
+        query = QtSql.QSqlQuery()
+        query.prepare('select dni, apellidos, nombre from clientes')
+        if query.exec_():
+            while query.next():
+                dni = query.value(0)
+                apellidos = query.value(1)
+                nombre = query.value(2)
+                var.ui.tablaCli.setRowCount(index + 1)
+                var.ui.tablaCli.setItem(index, 0, QtWidgets.QTableWidgetItem(dni))
+                var.ui.tablaCli.setItem(index, 1, QtWidgets.QTableWidgetItem(apellidos))
+                var.ui.tablaCli.setItem(index, 2, QtWidgets.QTableWidgetItem(nombre))
+                index += 1
+        else:
+            print("Error mostrar clientes: ", query.lastError().text())

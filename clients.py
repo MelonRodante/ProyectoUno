@@ -96,36 +96,30 @@ class Clients():
         try:
             # Preparamos el registro
             newCli = []
-            clitab = []  # sera lo que carguemos en la tabla
 
             k = 0
             for i in var.listaEditClients:
                 newCli.append(i.text())  # cargamos los valores que hay en los editLine
-                if k < 3:
-                    clitab.append(i.text())
-                    k += 1
 
             newCli.append(var.vpro)
             newCli.append(var.sex)
             newCli.append(Clients.selPago())
 
             print(newCli)
-            print(clitab)
+
+
+            for x in var.listaEditClients:
+                print(x.text())
 
             # aqui empieza como trabajar con la TableWidget
-            if var.listaEditClients:
-                row = 0
-                column = 0
+            if Clients.validarDNI(var.ui.editDNI.text()) and var.listaEditClients:
 
-                var.ui.tablaCli.insertRow(row)
-                for registro in clitab:
-                    cell = QtWidgets.QTableWidgetItem(registro)
-                    var.ui.tablaCli.setItem(row, column, cell)
-                    column += 1
-                conexion.Conexion.crearCliente(newCli)
+                if conexion.Conexion.crearCliente(newCli):
+                    Clients.limpiarCliente()
+
             else:
                 print('Faltan datos')
-            Clients.limpiarCliente()
+
 
         except Exception as error:
             print('Error: %s' % str(error))
