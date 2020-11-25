@@ -62,25 +62,23 @@ class Main(QtWidgets.QMainWindow):
         var.ui.editDNI.editingFinished.connect(events.Eventos.ValidoDni)
 
         clients.Clients.cargarProvincias()
-        var.ui.cmbProvincia.activated[str].connect(clients.Clients.selectProvincia)
 
         var.ui.tablaCli.clicked.connect(clients.Clients.cargarClientes)
         var.ui.tablaCli.setSelectionBehavior(QtWidgets.QTableWidget.SelectRows)
+
+        header = var.ui.tablaCli.horizontalHeader()
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
 
         '''Botones'''
         var.ui.btnCalendar.clicked.connect(clients.Clients.abrirCalendar)
 
         var.ui.btnAlta.clicked.connect(clients.Clients.altaCliente)
+        var.ui.btnBaja.clicked.connect(clients.Clients.bajaCliente)
+        var.ui.btnModificar.clicked.connect(clients.Clients.modifCliente)
+        var.ui.btnLimpiar.clicked.connect(clients.Clients.limpiarCliente)
         var.ui.btnSalir.clicked.connect(events.Eventos.Salir)
-
-
-        '''Radio Buttons'''
-        for i in var.rbtSex:
-            i.toggled.connect(clients.Clients.selSexo)
-
-        '''Check Box'''
-        for i in var.chkpago:
-            i.stateChanged.connect(clients.Clients.selPago)
 
         '''MenuBar'''
         var.ui.actionSalir.triggered.connect(events.Eventos.Salir)
@@ -92,6 +90,7 @@ class Main(QtWidgets.QMainWindow):
 if __name__ == '__main__':
     app = QtWidgets.QApplication([])
     window = Main()
-    window.showMaximized()
+    #window.showMaximized()
+    window.show()
     sys.exit(app.exec_())
 
