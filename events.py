@@ -1,4 +1,4 @@
-import var, sys, clients
+import var, sys, clients, main
 
 class Eventos():
 
@@ -7,20 +7,11 @@ class Eventos():
     '''
 
     @staticmethod
-    def Salir():
+    def AbrirDialogSalir():
         try:
-            var.dlgsalir.show()
-            if var.dlgsalir.exec_():
-                sys.exit()
-            else:
-                var.dlgsalir.close()
-        except Exception as error:
-            print('El error es %s' % str(error))
-
-    def SalirBoton(event):
-        try:
-            Eventos.Salir()
-            event.ignore()
+            dialog = main.DialogSalir()
+            dialog.show()
+            dialog.exec_()
         except Exception as error:
             print('El error es %s' % str(error))
 

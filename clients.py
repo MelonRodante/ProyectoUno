@@ -1,6 +1,7 @@
 from PyQt5 import QtWidgets
 
 import conexion
+import main
 import var
 
 
@@ -122,6 +123,9 @@ class Clients():
         '''
 
         try:
+
+            print('asd')
+
             newCli = []
 
             for i in var.listaEditClients:
@@ -141,9 +145,13 @@ class Clients():
                 if Clients.validarDNI(var.ui.editDNI.text()):
                     conexion.Conexion.crearCli(newCli)
                 else:
-                    var.ui.statusbar.showMessage('Error: DNI no valido')
+                    dialog = main.DialogAviso('Error: DNI no valido')
+                    dialog.show()
+                    dialog.exec_()
             else:
-                var.ui.statusbar.showMessage('Error: Faltan datos')
+                dialog = main.DialogAviso('Error: Faltan datos')
+                dialog.show()
+                dialog.exec_()
 
         except Exception as error:
             print('Error: %s' % str(error))

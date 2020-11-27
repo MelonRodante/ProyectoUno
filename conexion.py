@@ -1,5 +1,6 @@
 from PyQt5 import QtSql, QtWidgets
 
+import main
 import var
 from clients import Clients
 
@@ -77,15 +78,19 @@ class Conexion:
             var.ui.statusbar.showMessage('Cliente con DNI ' + var.ui.editDNI.text() + ' dado de alta')
 
         else:
-            var.ui.statusbar.showMessage('Error: Ya existe el cliente ' + cliente[0] + ' en la base de datos')
+            dialog = main.DialogAviso('Error: Ya existe un cliente con el ese DNI')
+            dialog.show()
+            dialog.exec_()
 
     @staticmethod
     def bajaCli(dni):
         query = QtSql.QSqlQuery()
         query.prepare('delete from clientes where dni = :dni')
         query.bindValue(':dni', dni)
-        if query.exec_():
-            var.ui.statusbar.showMessage('Cliente con DNI ' + dni + ' dado de baja')
+
+
+        '''if query.exec_():
+            var.ui.statusbar.showMessage('Cliente con DNI ' + dni + ' dado de baja')'''
 
     @staticmethod
     def modificarCli(newdata):

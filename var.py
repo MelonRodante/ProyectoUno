@@ -12,7 +12,7 @@ global chkpago
 
 global vpro
 
-global dlgsalir
+global vendialog
 
 global dlgcalendar
 

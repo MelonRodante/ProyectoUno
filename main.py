@@ -1,7 +1,7 @@
 import conexion
 from vencalendar import *
 from ventana import *
-from vensalir import *
+from vendialog import *
 from datetime import datetime
 import sys, var, events, clients
 
@@ -21,10 +21,33 @@ class DialogCalendar(QtWidgets.QDialog):
 class DialogSalir(QtWidgets.QDialog):
     def __init__(self):
         super(DialogSalir, self).__init__()
-        var.dlgsalir = Ui_venSalir()
-        var.dlgsalir.setupUi(self)
-        var.dlgsalir.buttonBox.button(QtWidgets.QDialogButtonBox.Yes).clicked.connect(events.Eventos.Salir)
-        #var.dlgsalir.buttonBox.button(QtWidgets.QDialogButtonBox.No).clicked.connect(events.Eventos.Salir)
+        self.ventana = Ui_venDialog()
+        self.ventana.setupUi(self)
+        self.ventana.retranslateUi(self, '¿Esta seguro de que desea salir de la aplicacion?', 'Si', 'No')
+        self.ventana.btnAceptar.clicked.connect(self.Salir)
+        self.ventana.btnCancelar.clicked.connect(self.close)
+
+    def Salir(self):
+        sys.exit(0)
+
+class DialogAviso(QtWidgets.QDialog):
+    def __init__(self, msg):
+        super(DialogAviso, self).__init__()
+        self.ventana = Ui_venDialog()
+        self.ventana.setupUi(self)
+        self.ventana.retranslateUi(self, msg, 'Aceptar')
+        self.ventana.btnAceptar.clicked.connect(self.close)
+        self.ventana.btnCancelar.hide()
+
+class DialogConfirmar(QtWidgets.QDialog):
+    def __init__(self, msg, funcionAceptar):
+        super(DialogConfirmar, self).__init__()
+        self.ventana = Ui_venDialog()
+        self.ventana.setupUi(self)
+        self.ventana.retranslateUi(self, msg, 'Si', 'No')
+        self.ventana.btnAceptar.clicked.connect(funcionAceptar)
+        self.ventana.btnCancelar.clicked.connect(self.close)
+
 
 
 class Main(QtWidgets.QMainWindow):
@@ -38,7 +61,6 @@ class Main(QtWidgets.QMainWindow):
         Definimos variables
         '''
         var.dlgcalendar = DialogCalendar()
-        var.dlgsalir = DialogSalir()
 
         var.listaEditClients = [var.ui.editDNI, var.ui.editApellido, var.ui.editNombre, var.ui.editFecha, var.ui.editDireccion]
 
@@ -78,13 +100,14 @@ class Main(QtWidgets.QMainWindow):
         var.ui.btnBaja.clicked.connect(clients.Clients.bajaCliente)
         var.ui.btnModificar.clicked.connect(clients.Clients.modifCliente)
         var.ui.btnLimpiar.clicked.connect(clients.Clients.limpiarCliente)
-        var.ui.btnSalir.clicked.connect(events.Eventos.Salir)
+        var.ui.btnSalir.clicked.connect(events.Eventos.AbrirDialogSalir)
 
         '''MenuBar'''
-        var.ui.actionSalir.triggered.connect(events.Eventos.Salir)
+        var.ui.actionSalir.triggered.connect(events.Eventos.AbrirDialogSalir)
 
     def closeEvent(self, event):
-        events.Eventos.SalirBoton(event)
+        events.Eventos.AbrirDialogSalir()
+        event.ignore()
 
 
 if __name__ == '__main__':
