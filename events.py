@@ -32,3 +32,23 @@ class Eventos():
                 var.ui.lblValido.setText('')
         except Exception as error:
             print('Error: %s ' % str(error))
+
+    @staticmethod
+    def DialoAviso(msg):
+        var.ui.statusbar.showMessage(msg)
+        dialog = main.DialogAviso(msg)
+        dialog.show()
+        dialog.exec_()
+
+
+    @staticmethod
+    def DialogoAbrir():
+        dialog = main.DialogAbrir()
+        dialog.show()
+        dialog.exec_()
+
+    @staticmethod
+    def DialogoImprimir():
+        dialog = main.DialogImprimir()
+        dialog.show()
+        dialog.exec_()

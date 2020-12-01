@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="iconoSalir">
+    <file>salir.png</file>
+  </qresource>
+  <qresource prefix="iconoImprimir">
+    <file>imprimir.png</file>
+  </qresource>
+  <qresource prefix="iconoAbrir">
+    <file>abrir.png</file>
+  </qresource>
+</RCC>

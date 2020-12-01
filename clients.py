@@ -1,6 +1,7 @@
 from PyQt5 import QtWidgets
 
 import conexion
+import events
 import main
 import var
 
@@ -70,18 +71,10 @@ class Clients():
             print('Error: %s' % str(error))
 
     @staticmethod
-    def cargarFecha(qDate):
-        try:
-            data = ('{0}/{1}/{2}'.format(qDate.day(), qDate.month(), qDate.year()))
-            var.ui.editFecha.setText(str(data))
-            var.dlgcalendar.hide()
-        except Exception as error:
-            print('Error: %s' % str(error))
-
-    @staticmethod
     def abrirCalendar():
         try:
-            var.dlgcalendar.show()
+            dlgCalendar = main.DialogCalendar()
+            dlgCalendar.exec_()
         except Exception as error:
             print('Error: %s ' % str(error))
 
@@ -113,6 +106,10 @@ class Clients():
                 for x, dato in enumerate(var.chkpago):
                     dato.setChecked(cliente[i].__contains__(tiposPago[x]))
 
+                i += 1
+                var.ui.spinEdad.setValue(cliente[i])
+
+
         except Exception as error:
             print('Error: %s' % str(error))
 
@@ -124,8 +121,6 @@ class Clients():
 
         try:
 
-            print('asd')
-
             newCli = []
 
             for i in var.listaEditClients:
@@ -134,6 +129,8 @@ class Clients():
             newCli.append(Clients.selectProvincia())
             newCli.append(Clients.selSexo())
             newCli.append(Clients.selPago())
+
+            newCli.append(var.ui.spinEdad.value())
 
             valido = True
             for i in newCli:
@@ -145,25 +142,22 @@ class Clients():
                 if Clients.validarDNI(var.ui.editDNI.text()):
                     conexion.Conexion.crearCli(newCli)
                 else:
-                    dialog = main.DialogAviso('Error: DNI no valido')
-                    dialog.show()
-                    dialog.exec_()
+                    events.Eventos.DialoAviso('Error: DNI no valido')
             else:
-                dialog = main.DialogAviso('Error: Faltan datos')
-                dialog.show()
-                dialog.exec_()
-
+                events.Eventos.DialoAviso('Error: Faltan datos')
         except Exception as error:
             print('Error: %s' % str(error))
-            var.ui.statusbar.showMessage('Error: Faltan datos')
 
     @staticmethod
     def bajaCliente():
         try:
             dni = var.ui.editDNI.text()
-            conexion.Conexion.bajaCli(dni)
-            conexion.Conexion.mostrarClientes()
-            Clients.limpiarCliente()
+            if conexion.Conexion.cargarCli(dni):
+                conf = main.DialogConfirmar("¿Desea eliminar al empleado de la base de datos?", conexion.Conexion.bajaCli)
+                conf.show()
+                conf.exec_()
+            else:
+                events.Eventos.DialoAviso('Error: No existe ningun empleado con ese DNI')
         except Exception as error:
             print('Error: %s' % str(error))
 
@@ -179,8 +173,18 @@ class Clients():
             newdata.append(Clients.selSexo())
             newdata.append(Clients.selPago())
 
-            if var.listaEditClients:
+            newdata.append(var.ui.spinEdad.value())
+
+            valido = True
+            for i in newdata:
+                if not i:
+                    valido = False
+                    break;
+
+            if valido:
                 conexion.Conexion.modificarCli(newdata)
+            else:
+                events.Eventos.DialoAviso('Error: Faltan datos')
 
         except Exception as error:
             print('Error: %s' % str(error))
@@ -202,6 +206,8 @@ class Clients():
                 dato.setChecked(False)
 
             var.ui.cmbProvincia.setCurrentIndex(0)
+
+            var.ui.spinEdad.setValue(18)
 
 
 

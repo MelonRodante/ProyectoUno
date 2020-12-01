@@ -1,5 +1,6 @@
 from PyQt5 import QtSql, QtWidgets
 
+import events
 import main
 import var
 from clients import Clients
@@ -44,12 +45,12 @@ class Conexion:
     @staticmethod
     def cargarCli(dni):
         query = QtSql.QSqlQuery()
-        query.prepare('select dni, apellidos, nombre, fechaalta, direccion, provincia, sexo, formaspago from clientes where dni = :dni')
+        query.prepare('select dni, apellidos, nombre, fechaalta, direccion, provincia, sexo, formaspago, edad from clientes where dni = :dni')
         query.bindValue(':dni', dni)
         if query.exec_():
             if query.next():
                 cliente = []
-                for i in range(8):
+                for i in range(9):
                     cliente.append(query.value(i))
                 return cliente
             else:
@@ -57,13 +58,11 @@ class Conexion:
         else:
             print("Error cargando cliente: ", query.lastError().text())
 
-
-
     @staticmethod
     def crearCli(cliente):
         query = QtSql.QSqlQuery()
-        query.prepare('insert into clientes (dni, apellidos, nombre, fechaalta, direccion, provincia, sexo, formaspago)'
-                      'VALUES (:dni, :apellidos, :nombre, :fechaalta, :direccion, :provincia, :sexo, :formaspago)')
+        query.prepare('insert into clientes (dni, apellidos, nombre, fechaalta, direccion, provincia, sexo, formaspago, edad)'
+                      'VALUES (:dni, :apellidos, :nombre, :fechaalta, :direccion, :provincia, :sexo, :formaspago, :edad)')
         query.bindValue(':dni',         str(cliente[0]))
         query.bindValue(':apellidos',   str(cliente[1]))
         query.bindValue(':nombre',      str(cliente[2]))
@@ -72,6 +71,8 @@ class Conexion:
         query.bindValue(':provincia',   str(cliente[5]))
         query.bindValue(':sexo',        str(cliente[6]))
         query.bindValue(':formaspago',  str(cliente[7]))
+        query.bindValue(':edad', cliente[8])
+
         if query.exec_():
             Conexion.mostrarClientes()
             Clients.limpiarCliente()
@@ -83,20 +84,27 @@ class Conexion:
             dialog.exec_()
 
     @staticmethod
-    def bajaCli(dni):
+    def bajaCli():
+
+        dni = var.ui.editDNI.text()
+
         query = QtSql.QSqlQuery()
         query.prepare('delete from clientes where dni = :dni')
         query.bindValue(':dni', dni)
 
 
-        '''if query.exec_():
-            var.ui.statusbar.showMessage('Cliente con DNI ' + dni + ' dado de baja')'''
+        if query.exec_():
+            var.ui.statusbar.showMessage('Cliente con DNI ' + dni + ' dado de baja')
+            Conexion.mostrarClientes()
+            Clients.limpiarCliente()
+        else:
+            events.Eventos.DialoAviso('Error: No existe ningun empleado con ese DNI')
 
     @staticmethod
     def modificarCli(newdata):
 
         query = QtSql.QSqlQuery()
-        query.prepare('update clientes set apellidos=:apellidos, nombre=:nombre, fechaalta=:fechaalta, direccion=:direccion, provincia=:provincia, sexo=:sexo, formaspago=:formaspago where dni = :dni')
+        query.prepare('update clientes set apellidos=:apellidos, nombre=:nombre, fechaalta=:fechaalta, direccion=:direccion, provincia=:provincia, sexo=:sexo, formaspago=:formaspago, edad=:edad where dni = :dni')
         query.bindValue(':dni',         str(newdata[0]))
         query.bindValue(':apellidos',   str(newdata[1]))
         query.bindValue(':nombre',      str(newdata[2]))
@@ -105,13 +113,12 @@ class Conexion:
         query.bindValue(':provincia',   str(newdata[5]))
         query.bindValue(':sexo',        str(newdata[6]))
         query.bindValue(':formaspago',  str(newdata[7]))
+        query.bindValue(':edad', newdata[8])
 
-        if query.exec_():
+        if query.exec_() and Conexion.cargarCli(str(newdata[0])):
             Conexion.mostrarClientes()
             Clients.limpiarCliente()
             var.ui.statusbar.showMessage('Datos del cliente con DNI ' + newdata[0] + ' modificados')
         else:
-            var.ui.statusbar.showMessage('ERROR')
-
-        s = 'asdpeneasdasd'
+            events.Eventos.DialoAviso('Error: No existe ningun empleado con ese DNI')
 

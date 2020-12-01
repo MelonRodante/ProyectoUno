@@ -3,20 +3,30 @@ from vencalendar import *
 from ventana import *
 from vendialog import *
 from datetime import datetime
-import sys, var, events, clients
+from PyQt5 import QtWidgets, QtGui, QtCore, QtPrintSupport
+import sys, var, events, clients, locale
 
+locale.setlocale(locale.LC_ALL, 'es-ES')
 
 class DialogCalendar(QtWidgets.QDialog):
     def __init__(self):
         super(DialogCalendar, self).__init__()
-        var.dlgcalendar = Ui_venCalendar()
-        var.dlgcalendar.setupUi(self)
+        self.dlgcalendar = Ui_venCalendar()
+        self.dlgcalendar.setupUi(self)
         diaactual = datetime.now().day
         mesactual = datetime.now().month
         anoactual = datetime.now().year
-        var.dlgcalendar.calendar.setSelectedDate(QtCore.QDate(anoactual,mesactual,diaactual))
-        var.dlgcalendar.calendar.clicked.connect(clients.Clients.cargarFecha)
+        self.dlgcalendar.calendar.setSelectedDate(QtCore.QDate(anoactual,mesactual,diaactual))
+        self.dlgcalendar.calendar.clicked.connect(self.cargarFecha)
 
+    def cargarFecha(self):
+        try:
+            date = self.dlgcalendar.calendar.selectedDate()
+            data = ('{0}/{1}/{2}'.format(date.day(),date.month(),date.year()))
+            var.ui.editFecha.setText(str(data))
+            self.close()
+        except Exception as error:
+            print('Error: %s' % str(error))
 
 class DialogSalir(QtWidgets.QDialog):
     def __init__(self):
@@ -45,10 +55,21 @@ class DialogConfirmar(QtWidgets.QDialog):
         self.ventana = Ui_venDialog()
         self.ventana.setupUi(self)
         self.ventana.retranslateUi(self, msg, 'Si', 'No')
-        self.ventana.btnAceptar.clicked.connect(funcionAceptar)
+        self.funcionAceptar = funcionAceptar
+        self.ventana.btnAceptar.clicked.connect(self.aceptar)
         self.ventana.btnCancelar.clicked.connect(self.close)
 
+    def aceptar(self, funcionAceptar):
+        self.funcionAceptar()
+        self.close()
 
+class DialogAbrir(QtWidgets.QFileDialog):
+    def __init__(self):
+        super(DialogAbrir, self).__init__()
+
+class DialogImprimir(QtPrintSupport.QPrintDialog):
+    def __init__(self):
+        super(DialogImprimir, self).__init__()
 
 class Main(QtWidgets.QMainWindow):
 
@@ -57,15 +78,18 @@ class Main(QtWidgets.QMainWindow):
         var.ui = Ui_venPrincipal()
         var.ui.setupUi(self)
 
+        labelFecha = QtWidgets.QLabel(datetime.now().strftime("%d %B %Y"))
+        var.ui.statusbar.addPermanentWidget(labelFecha)
+
         '''
         Definimos variables
         '''
-        var.dlgcalendar = DialogCalendar()
-
         var.listaEditClients = [var.ui.editDNI, var.ui.editApellido, var.ui.editNombre, var.ui.editFecha, var.ui.editDireccion]
 
         var.rbtSex = (var.ui.rbtMasc, var.ui.rbtFem)
-        var.chkpago = (var.ui.chkEfectivo, var.ui.chkTarjeta, var.ui.chkTransferencia)
+        var.chkpago = (var.ui.chkTarjeta, var.ui.chkEfectivo, var.ui.chkTransferencia)
+
+
 
         '''
         Conexion con la base de datos       
@@ -93,6 +117,7 @@ class Main(QtWidgets.QMainWindow):
         header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
         header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
 
+
         '''Botones'''
         var.ui.btnCalendar.clicked.connect(clients.Clients.abrirCalendar)
 
@@ -103,7 +128,14 @@ class Main(QtWidgets.QMainWindow):
         var.ui.btnSalir.clicked.connect(events.Eventos.AbrirDialogSalir)
 
         '''MenuBar'''
+        var.ui.actionAbrir.triggered.connect(events.Eventos.DialogoAbrir)
+        var.ui.actionImprimir.triggered.connect(events.Eventos.DialogoImprimir)
         var.ui.actionSalir.triggered.connect(events.Eventos.AbrirDialogSalir)
+
+        '''ToolBar'''
+        var.ui.toolbarAbrir.triggered.connect(events.Eventos.DialogoAbrir)
+        var.ui.toolbarImprimir.triggered.connect(events.Eventos.DialogoImprimir)
+        var.ui.toolbarSalir.triggered.connect(events.Eventos.AbrirDialogSalir)
 
     def closeEvent(self, event):
         events.Eventos.AbrirDialogSalir()
