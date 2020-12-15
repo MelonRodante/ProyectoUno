@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="calendar">
+    <file>calendar.png</file>
+  </qresource>
+  <qresource prefix="buscar">
+    <file>lupa.png</file>
+  </qresource>
+  <qresource prefix="recargar">
+    <file>recargar.png</file>
+  </qresource>
+</RCC>
