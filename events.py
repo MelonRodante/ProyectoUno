@@ -16,6 +16,15 @@ class Eventos():
             print('El error es %s' % str(error))
 
     @staticmethod
+    def AbrirAbout():
+        try:
+            about = main.DialogAbout()
+            about.show()
+            about.exec_()
+        except Exception as error:
+            print('El error es %s' % str(error))
+
+    @staticmethod
     def ValidoDni():
         try:
             dni = var.ui.editDNI.text()

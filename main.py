@@ -1,12 +1,21 @@
 import conexion
+import products
 from vencalendar import *
 from ventana import *
 from vendialog import *
+from venabout import *
 from datetime import datetime
 from PyQt5 import QtWidgets, QtGui, QtCore, QtPrintSupport
 import sys, var, events, clients, locale
 
 locale.setlocale(locale.LC_ALL, 'es-ES')
+
+class DialogAbout(QtWidgets.QDialog):
+    def __init__(self):
+        super(DialogAbout, self).__init__()
+        self.ventana = Ui_Dialog()
+        self.ventana.setupUi(self)
+        self.ventana.btnAboutCerrar.clicked.connect(self.close)
 
 class DialogCalendar(QtWidgets.QDialog):
     def __init__(self):
@@ -85,24 +94,36 @@ class Main(QtWidgets.QMainWindow):
         Definimos variables
         '''
         var.listaEditClients = [var.ui.editDNI, var.ui.editApellido, var.ui.editNombre, var.ui.editFecha, var.ui.editDireccion]
-
         var.rbtSex = (var.ui.rbtMasc, var.ui.rbtFem)
         var.chkpago = (var.ui.chkTarjeta, var.ui.chkEfectivo, var.ui.chkTransferencia)
-
-
 
         '''
         Conexion con la base de datos       
         '''
         conexion.Conexion.conectardb(var.filedb)
         conexion.Conexion.mostrarClientes()
+        conexion.Conexion.mostrarProductos()
+
+        '''
+        Formateo tablas
+        '''
+        #Tabla clientes
+        header = var.ui.tablaCli.horizontalHeader()
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Fixed)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
+
+        #Tabla productos
+        header = var.ui.tablaProductos.horizontalHeader()
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+
+
 
         '''
         Conexion con los eventos
         '''
 
-
-        '''Otros eventos'''
+        # Otros eventos
         QtWidgets.QAction(self).triggered.connect(self.close)  # Cerrar al pulsar la X de la ventana
 
         var.ui.editDNI.editingFinished.connect(events.Eventos.ValidoDni)
@@ -112,16 +133,19 @@ class Main(QtWidgets.QMainWindow):
         var.ui.tablaCli.clicked.connect(clients.Clients.cargarClientes)
         var.ui.tablaCli.setSelectionBehavior(QtWidgets.QTableWidget.SelectRows)
 
-        header = var.ui.tablaCli.horizontalHeader()
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
-        header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
-        header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
+        var.ui.tablaProductos.clicked.connect(products.Products.cargarPro)
+        var.ui.tablaProductos.setSelectionBehavior(QtWidgets.QTableWidget.SelectRows)
 
-
-        '''Botones'''
+        # Botones
         var.ui.btnCalendar.clicked.connect(clients.Clients.abrirCalendar)
         var.ui.btnBuscar.clicked.connect(clients.Clients.buscarCliente)
         var.ui.btnRecargar.clicked.connect(conexion.Conexion.mostrarClientes)
+
+        var.ui.btnProAlta.clicked.connect(products.Products.altaPro)
+        var.ui.btnProBaja.clicked.connect(products.Products.bajaPro)
+        var.ui.btnProModificar.clicked.connect(products.Products.modificarPro)
+        var.ui.btnProLimpiar.clicked.connect(products.Products.limpiarPro)
+        var.ui.btnProSalir.clicked.connect(events.Eventos.AbrirDialogSalir)
 
         var.ui.btnAlta.clicked.connect(clients.Clients.altaCliente)
         var.ui.btnBaja.clicked.connect(clients.Clients.bajaCliente)
@@ -129,12 +153,14 @@ class Main(QtWidgets.QMainWindow):
         var.ui.btnLimpiar.clicked.connect(clients.Clients.limpiarCliente)
         var.ui.btnSalir.clicked.connect(events.Eventos.AbrirDialogSalir)
 
-        '''MenuBar'''
+        # MenuBar
         var.ui.actionAbrir.triggered.connect(events.Eventos.DialogoAbrir)
         var.ui.actionImprimir.triggered.connect(events.Eventos.DialogoImprimir)
         var.ui.actionSalir.triggered.connect(events.Eventos.AbrirDialogSalir)
 
-        '''ToolBar'''
+        var.ui.actionAbout.triggered.connect(events.Eventos.AbrirAbout)
+
+        # ToolBar
         var.ui.toolbarAbrir.triggered.connect(events.Eventos.DialogoAbrir)
         var.ui.toolbarImprimir.triggered.connect(events.Eventos.DialogoImprimir)
         var.ui.toolbarSalir.triggered.connect(events.Eventos.AbrirDialogSalir)

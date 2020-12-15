@@ -2,6 +2,7 @@ from PyQt5 import QtSql, QtWidgets
 
 import events
 import main
+from products import Products
 import var
 from clients import Clients
 
@@ -142,3 +143,88 @@ class Conexion:
         else:
             print("Error mostrar clientes: ", query.lastError().text())
 
+    @staticmethod
+    def mostrarProductos():
+        index = 0
+        query = QtSql.QSqlQuery()
+        query.prepare('select codigo, nombre, precio from productos')
+        if query.exec_():
+            var.ui.tablaProductos.setRowCount(0)
+            while query.next():
+                codigo = str(query.value(0))
+                nombre = query.value(1)
+                precio = str(query.value(2))
+                var.ui.tablaProductos.setRowCount(index + 1)
+                var.ui.tablaProductos.setItem(index, 0, QtWidgets.QTableWidgetItem(codigo))
+                var.ui.tablaProductos.setItem(index, 1, QtWidgets.QTableWidgetItem(nombre))
+                var.ui.tablaProductos.setItem(index, 2, QtWidgets.QTableWidgetItem(precio + ' €'))
+                index += 1
+        else:
+            print("Error mostrar clientes: ", query.lastError().text())
+
+    @staticmethod
+    def altaPro(producto):
+        query = QtSql.QSqlQuery()
+        query.prepare(
+            'insert into productos (nombre, precio)'
+            'VALUES (:nombre, :precio)')
+        query.bindValue(':nombre', str(producto[0]))
+        query.bindValue(':precio', str(producto[1]))
+
+        if query.exec_():
+            Products.limpiarPro()
+            Conexion.mostrarProductos()
+            events.Eventos.DialoAviso('Producto dado de alta correctamente')
+        else:
+            events.Eventos.DialoAviso('Error: Ya un producto con ese nombre')
+
+    @staticmethod
+    def bajaPro():
+
+        codigo = var.ui.editProCodigo.text()
+
+        if codigo != '':
+            query = QtSql.QSqlQuery()
+            query.prepare('delete from productos where codigo = :codigo')
+            query.bindValue(':codigo', codigo)
+
+            if query.exec_():
+                Products.limpiarPro()
+                Conexion.mostrarProductos()
+                events.Eventos.DialoAviso('Producto eliminado correctamente')
+            else:
+                events.Eventos.DialoAviso('Error: No existe ningun producto con ese codigo')
+
+    @staticmethod
+    def cargarPro(codigo):
+        query = QtSql.QSqlQuery()
+        query.prepare(
+            'select codigo, nombre, precio from productos where codigo = :codigo')
+        query.bindValue(':codigo', codigo)
+        if query.exec_():
+            if query.next():
+                producto = []
+                for i in range(3):
+                    producto.append(query.value(i))
+                return producto
+            else:
+                return None
+        else:
+            print("Error cargando cliente: ", query.lastError().text())
+
+    @staticmethod
+    def modificarPro(producto):
+
+        query = QtSql.QSqlQuery()
+        query.prepare(
+            'update productos set nombre=:nombre, precio=:precio where codigo = :codigo')
+        query.bindValue(':codigo', int(producto[0]))
+        query.bindValue(':nombre', str(producto[1]))
+        query.bindValue(':precio', producto[2])
+
+        if query.exec_() and Conexion.cargarPro(int(producto[0])):
+            Products.limpiarPro()
+            Conexion.mostrarProductos()
+            events.Eventos.DialoAviso('Producto modificado correctamente')
+        else:
+            events.Eventos.DialoAviso('Error: No existe ningun producto con ese codigo')
