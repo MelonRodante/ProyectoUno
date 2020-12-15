@@ -122,3 +122,23 @@ class Conexion:
         else:
             events.Eventos.DialoAviso('Error: No existe ningun empleado con ese DNI')
 
+    @staticmethod
+    def buscarCli(dni):
+        index = 0
+        query = QtSql.QSqlQuery()
+        query.prepare('select dni, apellidos, nombre from clientes where dni = :dni')
+        query.bindValue(':dni', dni)
+        if query.exec_():
+            var.ui.tablaCli.setRowCount(0)
+            while query.next():
+                dni = query.value(0)
+                apellidos = query.value(1)
+                nombre = query.value(2)
+                var.ui.tablaCli.setRowCount(index + 1)
+                var.ui.tablaCli.setItem(index, 0, QtWidgets.QTableWidgetItem(dni))
+                var.ui.tablaCli.setItem(index, 1, QtWidgets.QTableWidgetItem(apellidos))
+                var.ui.tablaCli.setItem(index, 2, QtWidgets.QTableWidgetItem(nombre))
+                index += 1
+        else:
+            print("Error mostrar clientes: ", query.lastError().text())
+

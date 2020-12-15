@@ -209,7 +209,9 @@ class Clients():
 
             var.ui.spinEdad.setValue(18)
 
-
-
         except Exception as error:
             print('Error: %s' % str(error))
+
+    @staticmethod
+    def buscarCliente():
+        conexion.Conexion.buscarCli(var.ui.editDNI.text())

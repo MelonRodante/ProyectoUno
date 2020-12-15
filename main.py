@@ -120,6 +120,8 @@ class Main(QtWidgets.QMainWindow):
 
         '''Botones'''
         var.ui.btnCalendar.clicked.connect(clients.Clients.abrirCalendar)
+        var.ui.btnBuscar.clicked.connect(clients.Clients.buscarCliente)
+        var.ui.btnRecargar.clicked.connect(conexion.Conexion.mostrarClientes)
 
         var.ui.btnAlta.clicked.connect(clients.Clients.altaCliente)
         var.ui.btnBaja.clicked.connect(clients.Clients.bajaCliente)
